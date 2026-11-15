@@ -75,6 +75,8 @@ def descargar_mp3():
     try:
         opciones = {
             'format': 'bestaudio/best',
+            # Un enlace de video con &list debe descargar solo ese video.
+            'noplaylist': True,
             'outtmpl': os.path.join(CARPETA_DESCARGAS, '%(title)s.%(ext)s'),
             'ffmpeg_location': ffmpeg_dir,
             'postprocessors': [{
